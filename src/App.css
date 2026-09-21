@@ -1,0 +1,199 @@
+:root {
+  --paper: #FAF6EC;
+  --ink: #2B2A28;
+  --accent: #C1602B;
+  --line: #DDD5C0;
+  --card: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", 
+               "Meiryo", sans-serif;
+  color: var(--ink);
+}
+
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+.app h1 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.75rem;
+}
+
+.title-input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.4rem 0.2rem 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.title-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.editor textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.editor-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.6rem;
+}
+
+.char-count {
+  font-size: 0.8rem;
+  color: #8a8577;
+}
+
+.save-btn:hover {
+  opacity: 0.9;
+}
+
+.search-input {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--card);
+  padding: 0.6rem 0.8rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  margin: 1.5rem 0 0.8rem;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.memo-row {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.memo-title {
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.memo-body {
+  margin-top: 0.6rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--line);
+}
+
+.memo-list {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+}
+
+.memo-item {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0.9rem 1rem;
+  margin-bottom: 0.7rem;
+  cursor: pointer;
+}
+
+.memo-text {
+  white-space: pre-wrap;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.memo-date {
+  font-size: 0.75rem;
+  color: #a39d8c;
+  margin-top: 0.3rem;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #b0a99a;
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.delete-btn:hover {
+  color: var(--accent);
+}
+
+.memo-actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.edit-btn {
+  background: none;
+  border: none;
+  color: #a39d8c;
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.edit-btn:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 480px) {
+  .app {
+    padding: 1.5rem 1rem 3rem;
+  }
+  
+  .app h1 {
+    font-size: 1.4rem;
+  }
+
+  .editor textarea {
+    font-size: 0.95rem;
+  }
+
+  .memo-item {
+    padding: 0.75rem 0.85rem;
+  }
+
+  .memo-actions {
+    gap: 0.5rem;
+  }
+}
+
+mark {
+  background: #F5D98B;
+  color: inherit;
+  padding: 0 2px;
+  border-radius: 2px;
+}
