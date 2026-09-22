@@ -1,75 +1,33 @@
-# React + TypeScript + Vite
+# メモ帳アプリ
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + TypeScriptで作成したシンプルなメモ帳アプリです。
+タイトル・本文・保存日時を持つメモを作成し、検索・編集・削除ができます。
 
-Currently, two official plugins are available:
+## 公開URL
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+memo-app-one-umber.vercel.app
 
-## React Compiler
+## 主な機能
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- メモの保存・編集・削除
+- タイトル・本文の両方に対応した検索機能(リアルタイム・キーワードのハイライト表示付き)
+- localStorageによるデータの永続化(リロードしても消えない)
+- レスポンシブデザイン(スマホ表示対応)
 
-## Expanding the ESLint configuration
+## 使用技術
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React
+- TypeScript
+- Vite
+- CSS
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 工夫した点
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- タイトルが長い場合に自動で省略表示されるよう調整
+- 検索中は該当するメモが自動で開き、キーワード部分がハイライトされるようにした
+- メモ一覧以外の余白をクリックすると開いているメモが閉じるようにし、UXを改善した
+- ノートを意識した配色・フォントでデザインを統一した
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 学習の背景
 
-```
-
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+VS Codeでの開発、React、TypeScriptを初めて本格的に学ぶ中で、実際に手を動かしながら1つのアプリを完成させることを目標に制作しました。
